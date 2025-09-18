@@ -1,0 +1,131 @@
+/* Remove as margens e espaçamentos padrões de todos os elementos e ajusta o cálculo do tamanho (padding + border dentro do width/height). */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define a fonte padrão da página, cor de fundo e cor do texto. */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/*Estiliza o cabeçalho com fundo azul escuro, texto branco e espaçamento interno.  */
+header {
+    background-color: #0d47a1;
+    color: white;
+    padding: 1em 0;
+}
+
+/* Centraliza o título, dando margem abaixo dele. */
+#Titulo {
+    text-align: center;
+    margin-bottom: 0, 5em;
+}
+
+/* Define um container centralizado, com largura máxima para não ficar muito esticado. */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 70em;
+    text-align: center;
+}
+
+/* Define o menu de navegação como flexbox, centralizado, permitindo quebra de linha e espaçamento entre os itens. */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+/* Estiliza os links do menu, deixando texto branco, sem sublinhado e em negrito. */
+.menu {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Adiciona efeito ao passar o mouse no menu, mudando a cor de fundo para aqua. */
+.menu:hover {
+    background-color: aqua;
+}
+
+/* Define estilo para a imagem de perfil: largura fixa e bordas arredondadas. */
+.img-perfil {
+    width: 15em;
+    border-radius: 10%;
+    margin-top: 0.5em;
+}
+
+/* Cria uma seção de destaque (hero), com fundo claro, texto centralizado e espaçamento interno grande. */
+.hero {
+    background-color: #e3f2fd;
+    text-align: center;
+    padding: 3em 1em;
+}
+
+/* Define o título dentro da seção hero com tamanho maior e margem abaixo. */
+.hero h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+/* Define as seções “Sobre” e “Serviços” com fundo branco e espaçamento interno. */
+.sobre,
+.Servicos {
+    padding: 2em 0em;
+    background-color: #ffffff;
+}
+
+/* Centraliza e adiciona margem aos títulos dentro das seções. */
+.sobre h2,
+.Servicos h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Centraliza os parágrafos da seção “Sobre”. */
+.sobre p {
+    text-align: center;
+}
+
+/* Cria um grid para os cartões, com espaçamento entre eles e ajuste automático para se adaptar ao tamanho da tela. */
+.cards {
+    display: grid;
+    margin-top: 1em;
+    gap: 1.5em;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+}
+
+/* Estiliza cada cartão com fundo azul claro, espaçamento interno, bordas arredondadas, sombra e transição suave. */
+.card {
+    background-color: #e3f2fd;
+    padding: 1em;
+    border-radius: 0, 5em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+/* Ao passar o mouse no cartão, ele sobe levemente (efeito de destaque) */
+.card:hover {
+    transform: translateY(-1em)
+}
+
+/* Estiliza o rodapé com fundo azul escuro, texto branco, centralizado e espaçamento interno. */
+footer {
+    background-color: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin: auto;
+    width: 100%;
+
+    
+}
