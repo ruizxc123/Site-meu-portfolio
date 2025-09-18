@@ -1,131 +1,132 @@
-/* Remove as margens e espaçamentos padrões de todos os elementos e ajusta o cálculo do tamanho (padding + border dentro do width/height). */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0 !important;
+    /* Remove qualquer margem padrão de todos os elementos */
+    padding: 0 !important;
+    /* Remove qualquer preenchimento (padding) padrão de todos os elementos */
+    box-sizing: border-box !important;
+    /* Faz com que a largura e altura de um elemento incluam o padding e a borda, facilitando o layout */
 }
 
-/* Define a fonte padrão da página, cor de fundo e cor do texto. */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: Arial, sans-serif !important;
+    /* Define a fonte principal da página */
+    margin: 0 !important;
+    /* Garante que não haja margens no corpo */
+    padding: 0 !important;
+    /* Garante que não haja preenchimento no corpo */
+    display: flex !important;
+    /* Usa flexbox para centralizar o conteúdo */
+    justify-content: center !important;
+    /* Centraliza o conteúdo horizontalmente */
+    align-items: center !important;
+    /* Centraliza o conteúdo verticalmente */
+    min-height: 100vh !important;
+    /* Garante que o corpo ocupe pelo menos 100% da altura da janela de visualização */
+    background: linear-gradient(to right, #1B1B22, #6C6C88) !important;
+    /* Define um gradiente de fundo para a página */
+}
+
+.corpo {
+    background: linear-gradient(to right, #FBFFF1 40%, #979991 100%) !important;
+    /* Aplica um gradiente de fundo no elemento principal */
+    width: 90% !important;
+    /* Define a largura como 90% da largura do contêiner pai */
+    max-width: 50em !important;
+    /* Limita a largura máxima para 50em, garantindo que não fique muito largo em telas grandes */
+    padding: 2em !important;
+    /* Adiciona preenchimento interno */
+    margin-top: 4em !important;
+    /* Adiciona uma margem superior */
+    border-radius: 30px 30px !important;
+    /* Arredonda os cantos superiores e inferiores */
+    position: relative !important;
+    /* Define a posição relativa para posicionar elementos filhos (como a foto) */
+    z-index: 1 !important;
+    /* Define a ordem de empilhamento para que o corpo fique acima de outros elementos se houver sobreposição */
+    color: #fefff9;
+    /* Define a cor do texto para quase branco */
+}
+
+/* foto de perfil */
+.foto {
+    position: relative !important;
+    /* Define a posição relativa para controle de deslocamento */
+    top: -4.375em !important;
+    /* Desloca o elemento para cima, criando um efeito de sobreposição */
+    margin-bottom: -3.125em !important;
+    /* Adiciona uma margem negativa para puxar os elementos abaixo para cima */
+}
+
+.fotoperfil {
+    width: 8.75em !important;
+    /* Define a largura da foto */
+    height: 8.75em !important;
+    /* Define a altura da foto */
+    border-radius: 50% !important;
+    /* Transforma a imagem em um círculo perfeito */
+    object-fit: cover !important;
+    /* Garante que a imagem preencha o espaço sem ser distorcida */
+    box-shadow: 0 5px 15px !important;
+    /* Adiciona uma sombra à imagem */
+}
+
+.foto img {
+    border-radius: 50% !important;
+    /* Transforma a imagem em um círculo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+    /* Adiciona uma sombra suave */
+    width: 10em !important;
+    /* Define a largura da imagem */
+    height: 10em !important;
+    /* Define a altura da imagem */
+    object-fit: cover !important;
+    /* Garante que a imagem preencha o espaço mantendo a proporção */
+}
+
+.texto {
+    background: linear-gradient(to right, #6C6C88, #1B1B22) !important;
+    /* Adiciona um gradiente de fundo ao contêiner de texto */
+    padding: 5px 25px !important;
+    /* Adiciona preenchimento interno */
+    border-radius: 15px !important;
+    /* Arredonda as bordas do contêiner */
+    margin-bottom: 20px !important;
+    /* Adiciona uma margem na parte inferior */
+}
+
+.contatos {
+    display: flex !important;
+    /* Usa flexbox para organizar os contatos */
+    justify-content: center !important;
+    /* Centraliza os contatos horizontalmente */
+    gap: 40px !important;
+    /* Adiciona um espaçamento de 40px entre os itens */
+}
+
+.contatolink {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    line-height: 1.6;
-}
-
-/*Estiliza o cabeçalho com fundo azul escuro, texto branco e espaçamento interno.  */
-header {
-    background-color: #0d47a1;
-    color: white;
-    padding: 1em 0;
-}
-
-/* Centraliza o título, dando margem abaixo dele. */
-#Titulo {
-    text-align: center;
-    margin-bottom: 0, 5em;
-}
-
-/* Define um container centralizado, com largura máxima para não ficar muito esticado. */
-.container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 70em;
-    text-align: center;
-}
-
-/* Define o menu de navegação como flexbox, centralizado, permitindo quebra de linha e espaçamento entre os itens. */
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1em;
-}
-
-/* Estiliza os links do menu, deixando texto branco, sem sublinhado e em negrito. */
-.menu {
-    color: white;
+    /* Transforma cada link de contato em um contêiner flexível */
+    align-items: center;
+    /* Alinha a imagem e o texto verticalmente */
+    gap: 10px;
+    /* Adiciona um espaçamento entre a imagem e o texto */
     text-decoration: none;
-    font-weight: bold;
+    /* Remove o sublinhado do link */
+    color: inherit;
+    /* Herda a cor do texto do elemento pai */
 }
 
-/* Adiciona efeito ao passar o mouse no menu, mudando a cor de fundo para aqua. */
-.menu:hover {
-    background-color: aqua;
+.contatos img {
+    width: 3.125em;
+    /* Define a largura dos ícones de contato */
 }
 
-/* Define estilo para a imagem de perfil: largura fixa e bordas arredondadas. */
-.img-perfil {
-    width: 15em;
-    border-radius: 10%;
-    margin-top: 0.5em;
+a {
+    color: #1B1B22 !important;
+    /* Define a cor padrão para todos os links */
 }
 
-/* Cria uma seção de destaque (hero), com fundo claro, texto centralizado e espaçamento interno grande. */
-.hero {
-    background-color: #e3f2fd;
-    text-align: center;
-    padding: 3em 1em;
-}
-
-/* Define o título dentro da seção hero com tamanho maior e margem abaixo. */
-.hero h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-}
-
-/* Define as seções “Sobre” e “Serviços” com fundo branco e espaçamento interno. */
-.sobre,
-.Servicos {
-    padding: 2em 0em;
-    background-color: #ffffff;
-}
-
-/* Centraliza e adiciona margem aos títulos dentro das seções. */
-.sobre h2,
-.Servicos h2 {
-    text-align: center;
-    margin-bottom: 1em;
-}
-
-/* Centraliza os parágrafos da seção “Sobre”. */
-.sobre p {
-    text-align: center;
-}
-
-/* Cria um grid para os cartões, com espaçamento entre eles e ajuste automático para se adaptar ao tamanho da tela. */
-.cards {
-    display: grid;
-    margin-top: 1em;
-    gap: 1.5em;
-    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-}
-
-/* Estiliza cada cartão com fundo azul claro, espaçamento interno, bordas arredondadas, sombra e transição suave. */
-.card {
-    background-color: #e3f2fd;
-    padding: 1em;
-    border-radius: 0, 5em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-}
-
-/* Ao passar o mouse no cartão, ele sobe levemente (efeito de destaque) */
-.card:hover {
-    transform: translateY(-1em)
-}
-
-/* Estiliza o rodapé com fundo azul escuro, texto branco, centralizado e espaçamento interno. */
 footer {
-    background-color: #0d47a1;
-    color: white;
-    text-align: center;
-    padding: 1em;
-    margin: auto;
-    width: 100%;
-
-    
+    color: #FBFFF1;
+    /* Define a cor do texto no rodapé */
 }
